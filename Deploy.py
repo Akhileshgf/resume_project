@@ -18,6 +18,7 @@ warnings.filterwarnings('ignore')
 
 
 import en_core_web_sm
+import nltk
 nlp = en_core_web_sm.load()
 token = nltk.download('tokens')
 stopwords = nltk.download('stopwords')
