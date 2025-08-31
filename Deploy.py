@@ -20,7 +20,7 @@ warnings.filterwarnings('ignore')
 import en_core_web_sm
 import nltk
 nlp = en_core_web_sm.load()
-token = nltk.download('tokens')
+token = nltk.download('punkt')
 stopwords = nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -109,10 +109,9 @@ def preprocess(sentence):
     lemma_words = [lemmatizer.lemmatize(w) for w in filtered_words]
     return " ".join(lemma_words) 
 
-file_type=pd.DataFrame([], columns=['Uploaded File',  'Predicted Profile','Skills',])
+file_type=pd.DataFrame([], columns=['Uploaded File',  'Predicted Profile',])
 filename = []
 predicted = []
-skills = []
 
 
 # In[8]:
@@ -138,12 +137,9 @@ for doc_file in upload_file:
         cleaned = preprocess(display(doc_file))
         prediction = model.predict(Vectorizer.transform([cleaned]))[0]
         predicted.append(prediction)
-        extText = getText(doc_file)
-        skills.append(extract_skills(extText))
         
 if len(predicted) > 0:
     file_type['Uploaded File'] = filename
-    file_type['Skills'] = skills
     file_type['Predicted Profile'] = predicted
     st.table(file_type.style.format())
     
