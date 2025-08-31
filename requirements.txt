@@ -4,6 +4,5 @@ docx2txt
 pdfplumber
 pandas
 streamlit
-warnings
 en_core_web_sm
 nltk
