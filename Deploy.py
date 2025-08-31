@@ -20,8 +20,9 @@ warnings.filterwarnings('ignore')
 import en_core_web_sm
 import nltk
 nlp = en_core_web_sm.load()
-token = nltk.download('punkt')
-stopwords = nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
