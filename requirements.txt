@@ -1,4 +1,4 @@
-re
+regex
 PyPDF2
 docx2txt
 pdfplumber
