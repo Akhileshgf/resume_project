@@ -19,6 +19,8 @@ warnings.filterwarnings('ignore')
 
 import en_core_web_sm
 nlp = en_core_web_sm.load()
+token = nltk.download('tokens')
+stopwords = nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
@@ -39,7 +41,6 @@ def extract_skills(resume_text):
     nlp_text = nlp(resume_text)
     noun_chunks = nlp_text.noun_chunks
     tokens = [token.text for token in nlp_text if not token.is_stop] # removing stop words and implementing word tokenization
-
     data = pd.read_csv(r"skills.csv") # reading the csv file
     skills = list(data.columns.values) # extract values       
     skillset = []
