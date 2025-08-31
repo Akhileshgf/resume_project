@@ -5,3 +5,4 @@ pdfplumber
 pandas
 streamlit
 nltk
+spacy
