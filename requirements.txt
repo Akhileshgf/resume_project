@@ -1,5 +1,6 @@
 altair<5
-standard-imghdrregex
+standard-imghdr
+regex
 PyPDF2
 docx2txt
 pdfplumber
